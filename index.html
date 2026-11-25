@@ -1,0 +1,762 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentina Henao Zuluaga | Portafolio</title>
+
+<style>
+:root {
+    --oliva: #606C38;
+    --oscuro: #283618;
+    --claro: #87964D;
+    --beige: #DDA15E;
+    --fondo: #F5F5EF;
+    --texto: #30352B;
+    --gris: #74786C;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.7;
+}
+
+/* NAVEGACIÓN */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 7%;
+    box-shadow: 0 2px 10px #28361812;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 21px;
+    color: var(--oscuro);
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--texto);
+    font-size: 14px;
+}
+
+nav a:hover { color: var(--claro); }
+
+/* PORTADA */
+.hero {
+    background: linear-gradient(135deg, var(--oscuro), var(--oliva));
+    color: white;
+    padding: 65px 9%;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-wrap {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    width: 100%;
+}
+
+.hero-copy { flex: 1; }
+
+.badge {
+    display: inline-block;
+    color: var(--beige);
+    border: 1px solid #dda15e80;
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+h1 span { color: var(--beige); }
+
+.hero h2 {
+    font-weight: normal;
+    color: #e5e9d9;
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: #f0f1e8;
+    max-width: 650px;
+    margin-bottom: 25px;
+}
+
+.hero-photo {
+    flex: 0 0 290px;
+    text-align: center;
+}
+
+.hero-photo img {
+    width: 280px;
+    height: 340px;
+    object-fit: cover;
+    object-position: center top;
+    border: 5px solid white;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px #0004;
+}
+
+/* BOTONES */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 11px;
+}
+
+.btn {
+    display: inline-block;
+    border-radius: 8px;
+    padding: 12px 19px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+    transition: .3s;
+}
+
+.gold {
+    background: var(--beige);
+    color: var(--oscuro);
+}
+
+.outline {
+    border: 1px solid white;
+    color: white;
+    background: transparent;
+}
+
+.pdfbtn {
+    background: white;
+    color: var(--oscuro);
+}
+
+.btn:hover {
+    filter: brightness(.96);
+    transform: translateY(-1px);
+}
+
+/* SECCIONES */
+section { padding: 65px 9%; }
+
+.heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.heading h2 {
+    color: var(--oscuro);
+    font-size: 30px;
+    margin-bottom: 7px;
+}
+
+.heading p { color: var(--gris); }
+
+.card {
+    max-width: 950px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 13px;
+    padding: 30px;
+    border-left: 5px solid var(--oliva);
+    box-shadow: 0 5px 18px #2836180a;
+}
+
+.card p {
+    color: #52604b;
+    text-align: justify;
+    margin-bottom: 13px;
+}
+
+/* ESTUDIOS */
+#formacion, #experiencia { background: #e9ebdd; }
+
+.edu, .job {
+    max-width: 950px;
+    background: white;
+    margin: 0 auto 18px;
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid var(--beige);
+}
+
+.edu h3, .job h3 {
+    color: var(--oscuro);
+    font-size: 20px;
+}
+
+.institution, .company {
+    color: var(--oliva);
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.edu p, .job p { color: #52604b; }
+
+.tag {
+    display: inline-block;
+    background: #e9ebdd;
+    color: var(--oscuro);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* CURSOS */
+#cursos { background: white; }
+
+.course-box {
+    max-width: 950px;
+    margin: auto;
+    padding: 30px;
+    background: var(--fondo);
+    border-radius: 13px;
+}
+
+.course-box h3 {
+    color: var(--oscuro);
+    margin: 15px 0 8px;
+}
+
+.course-box h3:first-child { margin-top: 0; }
+
+.course-box ul { list-style: none; }
+
+.course-box li {
+    padding: 9px 3px;
+    border-bottom: 1px solid #dfe3d6;
+    color: #52604b;
+}
+
+.course-box li:before {
+    content: '✓ ';
+    font-weight: bold;
+    color: var(--oliva);
+}
+
+/* DATOS */
+#datos { background: white; }
+
+.grid {
+    max-width: 950px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.dato {
+    background: var(--fondo);
+    padding: 20px;
+    border-bottom: 3px solid var(--claro);
+    border-radius: 9px;
+}
+
+.dato strong {
+    display: block;
+    color: var(--oscuro);
+    margin-bottom: 5px;
+}
+
+.dato p {
+    color: var(--gris);
+    overflow-wrap: anywhere;
+}
+
+/* CONTACTO */
+#contacto {
+    background: var(--oscuro);
+    color: white;
+    text-align: center;
+}
+
+#contacto h2 { color: white; }
+
+#contacto .heading p { color: #e0e5d5; }
+
+.contact-info p { margin: 10px; }
+
+.contact-info a {
+    color: var(--beige);
+    text-decoration: none;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+}
+
+.social-btn {
+    display: inline-block;
+    background: var(--beige);
+    color: var(--oscuro) !important;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* PIE DE PÁGINA */
+footer {
+    background: #1e2812;
+    color: #d0d6c3;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+}
+
+/* WHATSAPP FLOTANTE */
+.wa-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 13px 18px;
+    border-radius: 40px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px #0003;
+}
+
+/* RESPONSIVE */
+@media(max-width:850px) {
+    .hero-wrap {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-photo { flex: initial; }
+
+    .hero-photo img {
+        width: 235px;
+        height: 270px;
+    }
+
+    .buttons { justify-content: center; }
+
+    nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav ul { justify-content: center; }
+}
+
+@media(max-width:600px) {
+    section { padding: 45px 6%; }
+
+    .grid { grid-template-columns: 1fr; }
+
+    .buttons { flex-direction: column; }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* IMPRESIÓN / PDF */
+@media print {
+    nav, .buttons, .socials, .wa-float {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        font-size: 11pt;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 25px;
+    }
+
+    .hero-photo img {
+        width: 190px;
+        height: 220px;
+    }
+
+    section {
+        padding: 20px;
+        page-break-inside: avoid;
+    }
+
+    .card, .edu, .job, .course-box, .dato {
+        box-shadow: none;
+    }
+
+    @page {
+        size: A4;
+        margin: 1.2cm;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENÚ -->
+<nav>
+    <div class="logo">VH | Portafolio</div>
+
+    <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#perfil">Perfil</a></li>
+        <li><a href="#formacion">Estudios</a></li>
+        <li><a href="#cursos">Cursos</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+    </ul>
+</nav>
+
+<!-- PORTADA -->
+<header class="hero" id="inicio">
+
+<div class="hero-wrap">
+
+    <div class="hero-copy">
+
+        <span class="badge">PORTAFOLIO PROFESIONAL</span>
+
+        <h1>
+            Valentina Henao<br>
+            <span>Zuluaga</span>
+        </h1>
+
+        <h2>Administradora Tecnológica en formación</h2>
+
+        <p>
+            Tecnóloga en Seguridad y Salud en el Trabajo,
+            Tecnóloga en Gestión Empresarial y estudiante de
+            Administración Tecnológica. Cuento con experiencia
+            en el área administrativa y formación complementaria
+            en finanzas, metodologías ágiles y analítica digital.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#perfil" class="btn gold">
+                Conoce mi perfil
+            </a>
+
+            <a href="https://wa.me/573148806390?text=Hola%20Valentina%2C%20vi%20tu%20portafolio%20profesional."
+               target="_blank"
+               class="btn outline">
+                Contactarme por WhatsApp
+            </a>
+
+            <button onclick="descargarPDF()" class="btn pdfbtn">
+                ↓ Descargar portafolio PDF
+            </button>
+
+        </div>
+    </div>
+
+    <!-- FOTO INTEGRADA EN EL HTML -->
+    <div class="hero-photo">
+
+        <img
+            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAwICQsJCAwLCgsODQwOEh4UEhEREiUbHBYeLCcuLisnKyoxN0Y7MTRCNCorPVM+QkhKTk9OLztWXFVMW0ZNTkv/2wBDAQ0ODhIQEiQUFCRLMisyS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0v/wAARCAEEAQQDASIAAhEBAxEB/8QAHAABAAEFAQEAAAAAAAAAAAAAAAIBAwQFBgcI/8QAPhAAAgEDAgMEBwcDAwMFAAAAAAECAwQRBSEGEjEiQVFhBxMycYGRoRQjQlKxwdFicvAWJDMVJuFTgqKy8f/EABkBAQADAQEAAAAAAAAAAAAAAAABAgMEBf/EACERAQEAAgICAwEBAQAAAAAAAAABAhEDIRIyBDFBIlFC/9oADAMBAAIRAxEAPwD1UAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKB7I1HEPEFpoFqqtzmdSW1OjD2pv8AjzIt0mS36bfJqr/ibRtOnyXWpW8Jr8KlzP5I8q1/i/VNYlOE6zt7Z9KNF4WPN9X+hz8IR93uK+cv0veOz7e1UeNtArT5Y6gl5ypyS+bReo8XaFWuFQhqlBVG8JSfKm/e9jxX1jWy6E7imrizlNLmnDrt1Rbamn0CpJpNNNPo0VPEOD+KL7R6ip06jqW+e1QqPZ+7wfuPYdJ1O31W1jXt3s/ai+sX4MbNM4AEoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAowLN5c07S1q160uWnTi5SZ4/rd5U1W/rXddtuXsrO0V3JHcccahFeqsebb/kqLx8P3fyOLuIRmowXtSe5yc2W74x18GOp5OZrRab7kQhJJZey8jNvoJZWMJdPca9Rc2sJ5eyRbA5F6NRS9vCXgZ1jGMpNL2JJppbkaHDep3MOeNOMYeb3On4f4ddBRlXjv37mtzmmM47tyE7WdpqHLODUW9mzstA1mppdeE4tuL2nH8yNtqWg299buDjieNpLqcbfxq6bUVC5i0vw1Etn5FfPcWvHqva6FWFelGrTkpQmlKLXei4ch6OtUd3pla1qPMrWXZfjGW/65OuRrLuMbNXSoAJQAAAAAAAAAAAAAAAAAAAAAAAAAAAUe27Kmr4ku3ZaNdVU3zOHJHHi9iL1EybunnWr3stQ1O4rt7Tn2cflXT6JGvlnmcs/wBPQvU1h9NkslXDfwXiebd73XqSSTTUarHdQ75bv3F3h+yV1f001tnf3EdQaacn+J4j7joOELRRjUryXXsxN59MddulpwjFJJYSWEi6lh7EVy+JLs5K6XX6UtjHv7G2vaEoXFKM9ur6ouKvSprM5pebZbeqWLl6tVlJvvispF9XW2Vs25/gKX2Hiu4s0+xUpSjjzWGv3+Z6Yuh5lKVLS+PLO6quSoV45Uo9G8cvU9Mi04prozfjvTm5J2kADRmAAAAAAAAAAAAAAAAAAAAAAAAAAAcj6QLmUbe1tov25ucvctl+p1x576QLjOqwgntCko/Fv/8ADPkusWvFN5tHBbSa2/hELhYapr2p7e5d5KnmUYpY6mLq1wrWMqsoqbm+VRbxld5y3HcjtmXdae+U7qt6yElC3g3CDf4muuDZade1rehGlT1CnCK6QjuzVVabuoxhbUpQpxz2XPme7ybDSdMlRq07hKsqtN5jjY2lkjCzK3p0VhqVepKKdRVM96N363npcsZJzaylnfBprGh9ip1bp0lzvfkju22bnSLf1tnTqVMRnUWY+SyymVaY/wCOJ1+9SquFVzqYW6WxPT4/ZlQqVbFTp1vYlCpz/PHQ3t3oka/tKEalNunJNZTx0e/luZFhp86KjGmopLbKWyRbymmfjd7Rv7RVY28qNKPq1BxcMdZZWMZ6Pf6HeabCdKwt4VfbjBJ75wctd20nCjTprLjNSfuXU7Gl/wAcNu5F+JTmmtJgA2c4AAAAAAAAAAAAAAAAAAAAAAAAAAKHl3HFbm4gqxfdKC+iPUWeTcZp/wCpKme+on9DDm9XR8f2WbV9jL8f3NHrtZVbv1ae1Nb+9m3tpYpZ72tjma9Z1NUuoyfWTx8CmM3i3yusm64coO4uEvwrqdlP7Pb08c9P3uSOI0K6dtdR22bwdfOq7mSpxoqTxlyklhL4kRZGjcxv6ztbaSfMu1JdFHvx593xN/DlilhqKjso+CNVbWFGGexu1hyWzJw06FODjRUqcM57Ly/qErutzlQqxuKMoSg0lWh3+UsoWtevUS9W6EYP8Tbk18MIv4oQpuOaUcrEsyWX7zXQtZOXNa1YOlvn/wAEfSjc0oxdWlBTc51JKLnJ7v4fsjp4rEUvBHO6LQqRr0JqPNHmlzSa6JR/lnRLob8U1Nubmy3df4qADViAAAAAAAAAAAAAAAAAAAAAAAAAACh5bx1H/ubOc5Sf7HqTPM+O4cvEMX05oJ/VmHP6t/j+7U6bFSdNPocfqH3erVZLbmm8eW/8nX2UuWVPHV5OP1dv7bV8eZtGXBd9N+ea7Z9nWUakZLxO4sqyuKEYp7Y3weeU37MltlZOk4e1JRkqVR43xuLNVaXcdLOhUhDCubpwS9lVMfU1E0oVG5TuFv1dR7nS0owmt2XlaUHL2I58WidtccvH8aXTLWjVknGgsRftzWWbirKNvzTfZillmQqdOCWMbddjUXCr6hxXpmm09qCX2quvGMXsn8V09xHtlpnnn/1Xd2NH1FpSp4w1Hf395kkUSOudPOt2AAkAAAAAAAAAAAAAAAAAAAAAAAAAABQ8248bfEcV4U49T0o8149WeI15UY/uYfI9HR8b3aGmnGrRS6vf5nLa5Bxvqq7ubKOrh/zU8fh/g53X4qV3VcfzNM5+C/06fkTeLGtO3Qi++OxkQpzypRz8DE0ySUpU33nS6ZShNJNGufszwu8dmna5eW+KbaqR8JdTobbUry4SSpKOe/mNdU0tc6lFYN3ptBQUU/0KreW/psLOjUcVKtPmfguhm8MWaesalfTXaxChTeOkUsv6v6EYLEVgcP63Tjrd3o1dxjVUY16D6c8Wlle9P/Ni3F7M+X0dSCi3KnU5AAAAAAAAAAAAAAAAAAAAAAAAAAoBUHN8YcV0eHaEYwjCteVPZpOWMLxf+bnCXHpO1h7U4WtP3U2/1ZGx6+ea8eyX+olyyT+5gnju3fU5O/4+129pOlUvZU4vZ+pioN/FbmLplw6kVzNvMt23lvoZc3eLo+P1m3lJc1zjuzFfQ5nWE/tVyn3TOos8TqSa8YnM6vmWoXPg5fuYYY+OTo5LuNS24tSi8NPuN1o2tU6c4wunyf19xqY0+1hrqVnbbHTqZOTeWF6erafVpXNupU3GpB/ii8mdRhCD/Y8fsry906r6y0rTpv8ApezOitePrynFRurOlVkvxRbg38OhS8d/Gk5Z+vS4tODxseccXVfX8V0pUnvCCi2n4F+p6QJ1LeVKjYclR97nn9jQq4q3Fedev2ZS3x4srhhlMt0z5MbNR2eicd32mRVC+jK9oR2jJyxUS9/f8fmdlpvGmiahFf7yNvUfWncdh/Po/gzx2dTnq1Et+08fMtzi8bm+3Pp79T1CzqvFO7oT/tqRZkJp9Hk+c5UlnKSz7jLsb+8sZ89rdVqMv6JtE7NPoIHl3DvH97Qu6dLV6ka9rLsyqciU4ee3XzPTaFanXpRq0ZxnTmsxlF5TQ2hcABIAAAAAAAAAAAAAABQCpynGnFS0ek7S0ad9UjnPVUl4vz8DO4t19aFYKpTUJ3NV8tOEvrJ+SPHr26q3dxUr1pudWpJylJ97YGJf1qlxVnVrVJVKk3mUpNtv4mvmsxfkZtUxZrqRpLHwbHTZ8kc+EsmFyGTabKUSnJP5acV/p0+k1Vz1k303XwZptRivtc598pMzNNq9qph+1H9f8Zh6jFq4l7+b5mH662DUjl5XvRR8y2zsXpRzt5FI8soJSysbc3X5mmF7Y8uPSzhhwz1S+Rf9XJLOMrxW6KpG23KtxeMYwX7alOdWLeyi+ZuXgtyVOm5y5Yrmk+5F+SVODpwak2+3JPZ+S8v87iLUrdGKp9OpWSyVCIEHAi4l5ohJbEiB3HAfEcrK5p2Neebau8Ry/Ym+mPJnCyeBSrOMtm1gnSH0OVNLwlq3/WdEt7mbTrJclX+5fzs/ibokAAAAAAAAAAAAAAxtRvaOnWdW6uZqFKkst+PkvNmQeYekPiBX12tPtp5t7aX3jT2nU/8AH65A53XtXraxqFW7rtpyeIwztCPckauTEpZZGTAhMsSiXmQaAtKOxdoLE2vFYEY9SUezJPwZGU3FsbrKVlWlX1dxDwbx9DJ1almMJrrFdr3ePzMGcHGfZ692DZ3tZzsqVxT69/ufU5L+O/TWtJqL72iDh25LomuZF6CjKnGcV2W+ngTqJQqU5NdnmcX7mJdVGU3GPBSi8xbT8UXozkusYPzcEFHlk4vqngqkdU7jgvS5KtUlBw5uWDeXGCUU/giCQJIaQpgJFSqCVV0IyiSRVoDGqQZiZxN+82VRbZNXVeK0l5kxD0T0V6n6u/uLCcuzXhzw/uj1+n6Hpx4RwfdO24j02cXj7+MX7n2X9Ge7EioAAAAAAAAAAAFANPxZqy0fRa9eMsV5L1dFeMn3/Dr8DxSpPLeW2/1Ox9JWqfa9WjZwf3dpHEvOb3fyWF8ziZdQDZFsi2UbANlMluUiDnjqBkRaw9yrLFNuSytkXOeK25l8wMvOaUJvu2l/JftasuWdpPLTzKn+6LNvvR5cbMKLkuWLxVg8xZyZfdj0Me8ZU6eKaS8913EqydSg3H2sZwVjKNzT5l2aj2kv3KtNRfdhFP1a/SFTEoUqy6SWJf3IiUt2qkXTk8c/R+a6BZTxJbo6sOunDn3dpIqRTJF2apUjkqmBNFUs7IimSi8FUoVMxizUV5f7iRvakFOHvOeqyTuKjTTXNs13kwrZaJNw1aykn0rwf/yR9DHzjYVOS7oT/LUi/qj6OTysrvLIVAAAAAAAAAAAwNc1KGk6XcXk8fdRfKvzS6JfMzmeY+kjXftV6tNoyXqbZ5qY/FU/8L6tgcbd3E7ivUrVZc9SpJzlJ97e7ZjNlKkt8ltsCTZanISkY9SYCpMtSlzJLPUhKWRSjz1FHqBfhmaWd0uizsZFOGMbQRBQx0Rdp5X4H8kBlWmZVeVt7xaRdl2XSr92cT8izby5a0H3pmRNwjTqes/4pyWf6cr+Tm5Z27ODL+dI8z5vWU0sS3WPzLqviSuZZpRqU3mPeWrdSp3EqUukt458V0+ZfpxjNzovpJNxz3d6/f5FNaq9vljYsJb5XvJSbk8vqW4Sw2pbNbMk2dWnD9JZK5LbZTmJQvZKlpTK84F3ITLXOOfA0MuM9sHP3tP1F3UivZb5l7mbeNQ1+rJOVKfk4iC3aS+9p/3L9T6Tpb04teCPmig+mHhn0dpFf7VpVnX/APVoQl84okZgAAAAAAAABRsDUcU6wtE0etcpr1z7FFPvk+ny6/A8SuK0qk5TnJynJtyb6t+J1PpD1x6lqrtqMmre0bgmn7U/xP8Ab4HGyk099/NAJPJCQcvMhOWwEJyMapLLJ1JE9NsLjVL+jZ2sHOtWkoxX7vyQGy4R4auOJtUjbUswoQxKvV/JHy833E9a4dueHNZqWlyuaOHKjUXSpDOz9/ij2vhXh624c0qFnQfPNvmrVcb1JePu8Ec56WrXn02xulHLo13CUvBSX8pAeVPCl1Jxl5ka6Safcy2mgMhyyXlPntatN/lz9TB5/MrGty5w+pFm0y2LyqSXIs7w6M2FKSm4VIrfKeP888/M1DnuX7W4lCrBJ7OSz8ymeG40wzsva/eYjXbj0luWlUK6hLluZLqsJr3NGG6hbH6Uz9qynUwUdReJiuoU58llWX6wr63zMTmK8wGUqhSVUxuchKYGXGsWtQqZo013837FlTLd1PmlGP5UBKk8M949Ht2rvhOxzLMqMXSl5cr2+mDwSm9z1r0QXc3Z3tnKUXGElViu9Z2f6ID0UFF0KgAAAAAA0vF2sLRdErXEX99P7uj/AHPv+HU3LPMvSve1lfWttGslRhS9Zy4XtNtZbfkgOErVHKT7T+O5Ycn3/QjKrNveSl/7SHrN94/JgVk+9MtTkVnLz+exZqSyBbk8s9j9FfDEdO05ardU/wDd3Ufu1Jb06f8AL6+7Bw3o54c/69rkZ3EOaytMVKuekn+GPx/RHuyWMY6eAFTF1TT6GqWFazuoc1KtHD8vBrzRlgD571qwlp97c2c5xqTt6jhzw6PBq3k2mpKav7qNTPP62alnrnLyaxrzAtNsg5l2USzKIFeclCq4yTT6MtYCQGTcV3VqJvrypFrOSOMkkgKkooKJNRwBTAZLAaAtsgy64lFDIFvPLHLLO8m2+rMi7hyxppd+Wy3TjuQJUqcn0WDvPRjqErLX428193dwdNycu9bx2+nxOLorHgbvRK32e/tqybj6upGXNF7rcbHvS6FSi6IqSAAAAACj6HjfpGryuOKLmGE/UqFOOei7KefqeyM8e9INtO34oupSXZrqNSL8uVL9UwOT9Uk/F+L3J+o2z3Emsb95ci+ZYAxZ0Y43MX7K6laFODinOSiuZ4W/i+42E1GLx1fkWqkJTT2SXmB7vwvodDQNGoWVHllJLmqVEsesm+r/AM7jbnm3oz4plJU9CvcucU3bVXLOV15H7u49IyBUoVKPoB4x6RLD7DxPcSisQuUq8fjs/qmcg9pM9R9LdhVlTsr9cvqqeaMljtZe6efDZnl9RdtgRIyiXEg0BYcSmC60RwBRIkkEiSAqkVCKgBgrgqBHBOMcspgkngCzf7TgvCJj0t30MjUE/u59zj1MWm+1j6EDPoxl3YNhbJ58HjqYFCMn0pp/E2umx9dcQpYac5KOH5vuZA95pPNOD/pRMpFYil4IqWAAAAABQ4n0pWdGej0Lxx+/pVVTjJfll1T+QAHl76kMvZJ4ywALyilF4RblsviABjTr1KNaM6UnCdNqUZR2aa6NM954R1CvqvDlhe3Ti69anmbisJvLWfoABuAABzPpGt6dfhK8dRZdJxqQ8nzJfo2eI1ViYAEUVAAiyjAAFcAAVRIACoQAFSQAGy1W3h/o7T7rf1v2ytT8scsX+xztDqmAQNvbLso3WkRT1GybW6uKf/2QBCXt4ALIAAAAAH//2Q==" 
+            alt="Fotografía profesional de Valentina Henao Zuluaga">
+
+    </div>
+</div>
+</header>
+
+<!-- PERFIL -->
+<section id="perfil">
+<div class="heading">
+    <h2>Perfil Profesional</h2>
+    <p>Mi perfil, competencias y proyección profesional</p>
+</div>
+
+<div class="card">
+
+<p>
+Soy estudiante de sexto semestre de Administración Tecnológica
+en la Institución Universitaria ITM, Tecnóloga en Gestión
+Empresarial y Tecnóloga en Seguridad y Salud en el Trabajo.
+Me caracterizo por mi compromiso, autonomía, disposición
+para aprender y orientación al crecimiento personal y profesional.
+</p>
+
+<p>
+Cuento con experiencia en el área administrativa,
+desempeñándome como auxiliar administrativa en Sistecrédito
+S.A.S., donde he fortalecido mis conocimientos y habilidades
+en el entorno empresarial. Asimismo, cuento con experiencia
+como practicante de Salud Ocupacional, lo que me ha permitido
+ampliar mi visión de los procesos organizacionales.
+</p>
+
+<p>
+Mi formación integral me permite desarrollar competencias
+para planear, organizar, dirigir, controlar y evaluar procesos
+relacionados con la gestión del conocimiento, la tecnología
+y la innovación, alineándolos con las estrategias y objetivos
+de las organizaciones.
+</p>
+
+<p>
+Me interesa contribuir al mejoramiento continuo,
+la transformación organizacional y la toma de decisiones
+en contextos dinámicos y complejos, integrando conocimientos
+administrativos, tecnológicos y de gestión.
+</p>
+
+</div>
+</section>
+
+<!-- FORMACIÓN -->
+<section id="formacion">
+<div class="heading">
+    <h2>Formación Académica</h2>
+    <p>Mi trayectoria educativa</p>
+</div>
+
+<div class="edu">
+    <h3>Administración Tecnológica</h3>
+    <div class="institution">Institución Universitaria ITM</div>
+    <p>
+        Formación en gestión tecnológica, administración,
+        innovación, gestión del conocimiento y desarrollo
+        organizacional.
+    </p>
+    <span class="tag">Actualmente cursando sexto semestre</span>
+</div>
+
+<div class="edu">
+    <h3>Tecnología en Gestión Empresarial</h3>
+    <div class="institution">Formación Tecnológica</div>
+    <p>
+        Conocimientos relacionados con procesos administrativos,
+        gestión empresarial, organización y apoyo a las operaciones
+        de las organizaciones.
+    </p>
+</div>
+
+<div class="edu">
+    <h3>Tecnología en Seguridad y Salud en el Trabajo</h3>
+    <div class="institution">Formación Tecnológica</div>
+    <p>
+        Formación en prevención de riesgos laborales,
+        seguridad en el entorno de trabajo y promoción
+        de condiciones laborales seguras y saludables.
+    </p>
+</div>
+</section>
+
+<!-- CURSOS -->
+<section id="cursos">
+<div class="heading">
+    <h2>Cursos y Formación Complementaria</h2>
+    <p>Aprendizaje continuo y actualización profesional</p>
+</div>
+
+<div class="course-box">
+
+<h3>Diplomados y cursos</h3>
+<ul>
+    <li>Diplomado en Finanzas Corporativas</li>
+    <li>Curso de Scrum Master</li>
+</ul>
+
+<h3>Formación en Platzi</h3>
+<ul>
+    <li>Curso de Google Tag Manager para Marketing</li>
+    <li>Curso de Generación de Reportes de Redes Sociales con Looker Studio</li>
+    <li>Curso de Herramientas de Automatización y Programación para Marketers</li>
+    <li>Curso de Google Analytics</li>
+    <li>Curso de Métricas para Medir el Crecimiento de tu Negocio Digital</li>
+    <li>Curso de Planeación y Medición de Campañas Digitales</li>
+</ul>
+
+</div>
+</section>
+
+<!-- EXPERIENCIA -->
+<section id="experiencia">
+<div class="heading">
+    <h2>Experiencia Laboral</h2>
+    <p>Mi trayectoria y experiencia profesional</p>
+</div>
+
+<div class="job">
+    <h3>Auxiliar Administrativa</h3>
+    <div class="company">Sistecrédito S.A.S.</div>
+    <div class="date">3 de junio de 2021 – Actualmente</div>
+    <p>
+        Desempeño en el área administrativa, apoyando procesos
+        organizacionales y contribuyendo al desarrollo de las
+        actividades de la compañía. Esta experiencia me ha
+        permitido fortalecer competencias administrativas,
+        responsabilidad, organización y conocimiento del
+        entorno empresarial.
+    </p>
+</div>
+
+<div class="job">
+    <h3>Practicante de Salud Ocupacional</h3>
+    <div class="company">Colegio Campestre La Colina</div>
+    <div class="date">Práctica profesional</div>
+    <p>
+        Apoyo a actividades relacionadas con Seguridad y Salud
+        en el Trabajo, contribuyendo a la promoción de ambientes
+        laborales seguros, la prevención de riesgos y el bienestar
+        de la comunidad institucional.
+    </p>
+</div>
+</section>
+
+<!-- DATOS -->
+<section id="datos">
+<div class="heading">
+    <h2>Datos Personales</h2>
+    <p>Información de contacto</p>
+</div>
+
+<div class="grid">
+
+<div class="dato">
+    <strong>Nombre completo</strong>
+    <p>Valentina Henao Zuluaga</p>
+</div>
+
+<div class="dato">
+    <strong>Edad</strong>
+    <p>28 años</p>
+</div>
+
+<div class="dato">
+    <strong>Ubicación</strong>
+    <p>Medellín, Colombia</p>
+</div>
+
+<div class="dato">
+    <strong>Teléfono / WhatsApp</strong>
+    <p>314 880 6390</p>
+</div>
+
+<div class="dato">
+    <strong>Correo electrónico</strong>
+    <p>valentinahenao1132667@correo.itm.edu.co</p>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+<div class="heading">
+    <h2>Contacto</h2>
+    <p>Conectemos y exploremos nuevas oportunidades</p>
+</div>
+
+<div class="contact-info">
+    <p><strong>Valentina Henao Zuluaga</strong></p>
+    <p>Medellín, Colombia</p>
+
+    <p>
+        Teléfono:
+        <a href="tel:+573148806390">314 880 6390</a>
+    </p>
+
+    <p>
+        Correo:
+        <a href="mailto:valentinahenao1132667@correo.itm.edu.co">
+            valentinahenao1132667@correo.itm.edu.co
+        </a>
+    </p>
+
+    <div class="socials">
+
+        <a href="https://wa.me/573148806390?text=Hola%20Valentina%2C%20vi%20tu%20portafolio%20profesional."
+           target="_blank"
+           class="social-btn">
+            WhatsApp
+        </a>
+
+        <a href="https://www.instagram.com/valenz981?evlk=b3gwNzllODZxYzg4&utm_source=qr"
+           target="_blank"
+           class="social-btn">
+            Instagram
+        </a>
+
+        <a href="mailto:valentinahenao1132667@correo.itm.edu.co"
+           class="social-btn">
+            Correo electrónico
+        </a>
+
+    </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Valentina Henao Zuluaga</p>
+    <p>Portafolio Profesional | Administración Tecnológica</p>
+</footer>
+
+<!-- BOTÓN WHATSAPP FLOTANTE -->
+<a href="https://wa.me/573148806390?text=Hola%20Valentina%2C%20vi%20tu%20portafolio%20profesional."
+   target="_blank"
+   class="wa-float"
+   aria-label="Contactar por WhatsApp">
+    WhatsApp
+</a>
+
+<!-- DESCARGAR PDF -->
+<script>
+function descargarPDF() {
+    window.print();
+}
+</script>
+
+</body>
+</html>
